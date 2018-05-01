@@ -1,8 +1,8 @@
 ﻿open canopy.runner.classic
 open canopy.configuration
 open canopy.classic
+open canopy.types
 
-wipSleep <- 0.2
 compareTimeout <- 10.0
 elementTimeout <- 10.0
 pageTimeout <- 10.0
@@ -10,7 +10,7 @@ autoPinBrowserRightOnLaunch <- false
 failFast := true
 
 chromeDir <- "./tools/"
-start chrome
+start ChromeHeadless
 
 resize (1920, 1080)
 

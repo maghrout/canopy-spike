@@ -6,8 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+      <Content Include=".\tools\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Program.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <PackageReference Include="canopy" Version="2.0.1" />
