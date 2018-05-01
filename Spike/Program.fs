@@ -2,7 +2,14 @@
 open canopy.configuration
 open canopy.classic
 
-chromeDir <- "bin\\Debug\\netcoreapp2.0"
+wipSleep <- 0.2
+compareTimeout <- 10.0
+elementTimeout <- 10.0
+pageTimeout <- 10.0
+autoPinBrowserRightOnLaunch <- false
+failFast := true
+
+chromeDir <- "./tools/"
 start chrome
 
 resize (1920, 1080)
