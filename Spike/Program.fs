@@ -2,12 +2,15 @@
 open canopy.configuration
 open canopy.classic
 open canopy.types
+open canopy.reporters
 
 compareTimeout <- 10.0
 elementTimeout <- 10.0
 pageTimeout <- 10.0
 autoPinBrowserRightOnLaunch <- false
 failFast := true
+
+reporter <- new JUnitReporter("./TestResults.xml") :> IReporter
 
 chromeDir <- System.AppDomain.CurrentDomain.BaseDirectory
 start ChromeHeadless
