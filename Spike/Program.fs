@@ -9,7 +9,7 @@ pageTimeout <- 10.0
 autoPinBrowserRightOnLaunch <- false
 failFast := true
 
-chromeDir <- "./tools/"
+chromeDir <- System.AppDomain.CurrentDomain.BaseDirectory
 start ChromeHeadless
 
 resize (1920, 1080)
