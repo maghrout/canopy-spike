@@ -17,20 +17,20 @@ start ChromeHeadless
 
 resize (1920, 1080)
 
-context ("Google test run")
-"Search for facebook" &&& fun _ ->
-    url "https://www.google.co.uk/"
-    "#lst-ib" << "facebook"
+context ("Sky News test run")
+"Search and check it's been searched" &&& fun _ ->
+    url "https://news.sky.com/uk"
+    ".sdc-news-header__search-input" << "technology"
     press enter
-    "h3" == "Facebook – log in or sign up"
+    "h1" == "Search Results"
 
 "Check if title is correct" &&& fun _ ->
     let thisTitle = title().Trim()
-    thisTitle === "Search | Plumbs"
+    thisTitle === "Search Results"
 
 "Checked if main content area is shown" &&& fun _ ->
-    click ".search-new li a"
-    displayed ".main_content_area"
+    click ".sdc-news-listing__link"
+    displayed ".sdc-news-story-article"
 
 run()
 
