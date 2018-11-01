@@ -17,13 +17,12 @@ start ChromeHeadless
 
 resize (1920, 1080)
 
-context ("Plumbs test run")
-"Search and check it's been searched" &&& fun _ ->
-    url "https://www.plumbs.co.uk/"
-    click "#search_toggle"
-    "#search_drop_down" << "covers"
+context ("Google test run")
+"Search for facebook" &&& fun _ ->
+    url "https://www.google.co.uk/"
+    "#lst-ib" << "facebook"
     press enter
-    "h1.red" == "Search"
+    "h3" == "Facebook – log in or sign up"
 
 "Check if title is correct" &&& fun _ ->
     let thisTitle = title().Trim()
